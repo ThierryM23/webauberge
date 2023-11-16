@@ -1,0 +1,49 @@
+
+
+  body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .principal {
+    background-color: #fafafa;
+    margin-top: 150px;
+    border: 2px solid #ccc;
+    /* IMPORTANTE */
+    text-align: justify;
+  }
+
+  .prof {
+    border: 2px solid rgb(247, 245, 245);
+    margin-top: 150px;
+    text-align: center;
+    background-image: linear-gradient(rgba(239, 218, 164, 0.5), rgba(255, 255, 255, 0.5)), url("../img/trading_prof.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(133, 5, 12)
+  }
+
+  .navbar-brand>p {
+    color: rgba(255, 166, 0, 0.877);
+  }
+  .bot1{
+    height:630px;
+    background-image: linear-gradient(rgba(209, 184, 120, 0.5), rgba(255, 255, 255, 0.5));
+  }
+
+    .bot1 > img{
+      width: 100%;
+      max-width: 600px;
+
+  }
+
+  .bot2{
+    height:630px;
+    background-image: linear-gradient(rgba(209, 184, 120, 0.5), rgba(255, 255, 255, 0.5));
+  }
+
+  .bot2 > img{
+    width: 100%;
+    max-width: 600px;
+
+  }

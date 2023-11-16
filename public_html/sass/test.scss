@@ -1,0 +1,40 @@
+$color-fondo: #333;
+$color-text: #999;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+
+
+.navbar {
+    background-color: $color-fondo;
+  }
+  .footer {
+    border: 1px solid $color-fondo;
+  }
+
+  
+nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    a {
+      display: block;
+      padding: 6px 12px;
+      text-decoration: none;
+    }
+  }
+
+
+/* por debajo de sm */
+  @media screen and (max-width: sm){
+    
+  }

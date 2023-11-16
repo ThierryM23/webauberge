@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+
+<head>
+    <title>l'Auberge refleurie</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css"
+        href="//fonts.googleapis.com/css?family=Poppins:300,300i,400,500,600,700,800,900,900i%7CPT+Serif:400,700">
+    <link rel="stylesheet" href="../distv510/css/bootstrap.css">
+    <link rel="stylesheet" href="../distv510/css/fonts.css">
+    <link rel="stylesheet" href="../distv510/css/style.css">
+    <style>
+        .ie-panel {
+            display: none;
+            background: #212121;
+            padding: 10px 0;
+            box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .3);
+            clear: both;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        html.ie-10 .ie-panel,
+        html.lt-ie-10 .ie-panel {
+            display: block;
+        }
+
+        @media (min-width: 400px) and (max-width: 768px) {
+            .parallax-container {
+                max-height: 100%;
+                display: inline-block;
+            }
+        }
+
+        #display_image {
+            width: 375px;
+            height: 211px;
+            border: 1px solid black;
+            background-position: center;
+            background-size: cover;
+        }
+
+
+        .pricing-wrapper {
+            width: 960px;
+            margin: 40px auto 0;
+        }
+
+        .pricing-table {
+            margin: 0 10px;
+            text-align: center;
+            max-width: 300px;
+            float: left;
+            -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+            -webkit-transition: all 0.25s ease;
+            -o-transition: all 0.25s ease;
+            transition: all 0.25s ease;
+        }
+
+        .pricing-table:hover {
+            -webkit-transform: scale(1.06);
+            -ms-transform: scale(1.06);
+            -o-transform: scale(1.06);
+            transform: scale(1.06);
+        }
+
+        .pricing-title {
+            color: #FFF;
+            background: #e95846;
+            padding: 20px 0;
+            font-size: 2em;
+            text-transform: uppercase;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+        }
+
+        .pricing-table.recommended .pricing-title {
+            background: #2db3cb;
+        }
+
+        .pricing-table.recommended .pricing-action {
+            background: #2db3cb;
+        }
+
+        .pricing-table .price {
+            background: rgb(233, 88, 70);
+            font-size: 1.6em;
+            font-weight: 700;
+            padding: 5px 0;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+        }
+
+        .pricing-table .price sup {
+            font-size: 0.4em;
+            position: relative;
+            left: 5px;
+        }
+
+        .table-list {
+            background: #FFF;
+            color: #403d3a;
+        }
+
+        .table-list li {
+            font-size: 1.4em;
+            font-weight: 700;
+            padding: 12px 8px;
+            background: rgba(255, 228, 196, .4);
+        }
+
+        .table-list li:before {
+
+            font-family: 'FontAwesome';
+            color: rgba(38, 156, 128, 0.9);
+            display: inline-block;
+            position: relative;
+            right: 5px;
+            font-size: 16px;
+        }
+
+        .table-list li span {
+            font-weight: 400;
+        }
+
+        .table-list li span.unlimited {
+            color: #FFF;
+            background: #e95846;
+            font-size: 0.9em;
+            padding: 5px 7px;
+            display: inline-block;
+            -webkit-border-radius: 38px;
+            -moz-border-radius: 38px;
+            border-radius: 38px;
+        }
+
+
+        .table-list li:nth-child(2n) {
+            background: #F0F0F0;
+        }
+
+        .table-list hr {
+            height: 3px;
+            width: 100%;
+            text-align: center;
+            background-color: #ff0000;
+            border: none;
+        }
+
+        .table-buy {
+            background: #FFF;
+            padding: 15px;
+            text-align: left;
+            overflow: hidden;
+        }
+
+        .table-buy p {
+            float: left;
+            color: #37353a;
+            font-weight: 700;
+            font-size: 2.4em;
+        }
+
+        .table-buy p sup {
+            font-size: 0.5em;
+            position: relative;
+            left: 5px;
+        }
+
+        .table-buy .pricing-action {
+            float: right;
+            color: #FFF;
+            background: #e95846;
+            padding: 10px 16px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            font-weight: 700;
+            font-size: 1.4em;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+            -webkit-transition: all 0.25s ease;
+            -o-transition: all 0.25s ease;
+            transition: all 0.25s ease;
+        }
+
+        .table-buy .pricing-action:hover {
+            background: #cf4f3e;
+        }
+
+        .recommended .table-buy .pricing-action:hover {
+            background: #228799;
+        }
+
+        /** ================
+        * Responsive
+        ===================*/
+        @media only screen and (min-width: 768px) and (max-width: 959px) {
+            .pricing-wrapper {
+                width: 768px;
+            }
+
+            .pricing-table {
+                width: 236px;
+            }
+
+            .table-list li {
+                font-size: 1.3em;
+            }
+
+        }
+
+        @media only screen and (max-width: 767px) {
+            .pricing-wrapper {
+                width: 420px;
+            }
+
+            .pricing-table {
+                display: block;
+                float: none;
+                margin: 0 0 20px 0;
+                width: 100%;
+            }
+        }
+
+        @media only screen and (max-width: 479px) {
+            .pricing-wrapper {
+                width: 300px;
+            }
+        }
+
+
+        .gallery-item-classic img {
+            /*width: 200px;*/
+            padding: 1px;
+            background-image: linear-gradient(to bottom, rgba(45, 230, 12, 1) 0%, rgba(45, 230, 12, 1) 100%), linear-gradient(to bottom, rgba(45, 230, 12, 1) 0%, rgb(230, 121, 12) 100%);
+            /* background-image: linear-gradient(to bottom, rgba(45, 230, 12,1) 0%, rgba(45, 230, 12,1) 100%), linear-gradient(to bottom, rgba(45, 230, 12,1) 0%, rgb(230, 121, 12) 100%); */
+            background-clip: content-box, padding-box;
+            height: 200px;
+            object-fit: cover;
+
+        }
+
+        @font-face {
+            font-family: 'laughing_and_smilingregular';
+            src: url('../fonts/laughing_and_smiling-webfont.woff2') format('woff2'),
+                url('../fonts/fontawesome-webfont.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .letralogo {
+            font-family: 'laughing_and_smilingregular';
+        }
+
+        .letralogo2 {
+            font-family: 'Brush Script MT';
+            font-weight:bolder;
+            font-style: normal;
+            font-size: 26px;
+            color: rgba(38, 156, 128, 0.9);
+        }
+
+        
+        .wrap{
+            width: 1100px;
+            margin: 50px auto;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+        
+        .tarjeta-wrap{
+            margin: 10px;
+            -webkit-perspective: 800;
+            perspective: 800;
+        }
+        
+        .tarjeta{
+            width: 300px;
+            height: 350px;
+            background: #F29720;
+            position: relative;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-transition: .7s ease;
+            transition: .7s ease;
+            -webkit-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+            box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+        
+        }
+        
+        .adelante, .atras{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        
+        .adelante{
+            width: 100%;
+        }
+        
+        .atras{
+            -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        
+            padding: 15px;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+        
+            text-align: center;
+            color: #fff;
+            font-family: "open sans";
+          background: #F29720;
+        }
+        
+        .tarjeta-wrap:hover .tarjeta{
+            -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+            display: flex;
+        }
+        
+        .card1{
+            background-image: url("../images/photos/new1.jpeg") ;
+            background-size: cover;
+        }
+        
+        .card2{
+            background-image: url("../images/photos/cocktails-louna.png" );
+            background-size: cover;
+        }
+        
+        .card3{
+            background-image: url("../images/photos/Steak7.jpg" );
+            background-size: cover;
+        }
+        
+        @media screen and (max-width: 1100px) {
+            .wrap{
+              grid-template-columns: 1fr;
+              color: red;
+            }
+          }
+
+
+    </style>
+    <script src="../distv510/js/bootstrap.js"></script>
+</head>
+
+
+<body>
+    <div class="ie-panel">
+        <a href="http://windows.microsoft.com/en-US/internet-explorer/">
+            <img src="../images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820"
+                alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.">
+        </a>
+    </div>
+    <div class="preloader">
+        <div class="preloader-body">
+            <div class="cssload-container">
+                <div class="cssload-speeding-wheel"></div>
+            </div>
+            <p>Loading...</p>
+        </div>
+    </div>
+    <div class="page">
+        <!-- Page Header-->
+        <header class="section page-header">
+            <!-- RD Navbar-->
+            <div class="rd-navbar-wrap">
+                <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
+                    data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed"
+                    data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static"
+                    data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static"
+                    data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px"
+                    data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                    <div class="rd-navbar-main-outer">
+                        <div class="rd-navbar-main">
+                            <!-- RD Navbar Panel-->
+                            <div class="rd-navbar-panel">
+                                <!-- RD Navbar Toggle-->
+                                <button class="rd-navbar-toggle"
+                                    data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span>
+                                </button>
+                                <!-- RD Navbar Brand-->
+                                <div class="rd-navbar-brand"><a href="index.html">
+                                        <img class="brand-logo-light" src="../en/auberge_images/logoaubergevrai.jpeg"
+                                            alt="" width="140" height="57"
+                                            srcset="../en/auberge_images/logoaubergevrai.jpeg 2x" /></a>
+                                </div>
+                            </div>
+                            <div class="rd-navbar-main-element">
+                                <div class="rd-navbar-nav-wrap mr-auto">
+                                    <!-- RD Navbar Nav-->
+                                    <ul class="rd-navbar-nav">
+                                        <li class="rd-nav-item">
+                                            <a class="rd-nav-link" href="#menu">Menu</a>
+                                        </li>
+                                        <li class="rd-nav-item">
+                                            <a class="rd-nav-link" href="#contact">Contact</a>
+                                        </li>
+                                        <li class="rd-nav-item">
+                                            <a class="rd-nav-link" href="#gallerie">Gallerie de photos</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- Swiper-->
+        <section class="parallax-container overlay-1 fadeIn" id="logo" data-parallax-img="../img/Entree_principL.jpeg">
+            <div class="parallax-content breadcrumbs-custom context-dark">
+                <div class="container">
+                    <div class="wrap">
+                        <div class="tarjeta-wrap">
+                            <div class="tarjeta">
+                                <div class="adelante card1"></div>
+                                <div class="atras">
+                                    <p><h4>Notre restaurant vous offre un service complet, et vous pouvez aprecier la vue de notre salon ou de la térrasse..</h4></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tarjeta-wrap">
+                            <div class="tarjeta">
+                                <div class="adelante card2 "><h3 class="text-dark">COCKTAILS</h3></div>
+                                <div class="atras">
+                                    <p><h4>Rencontrez notre barmaid talentueuse, Louna, qui vous concoctera des cocktails délicieux à chaque visite 🍹🍸🌺</h4></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tarjeta-wrap">
+                            <div class="tarjeta">
+                                <div class="adelante card3"></div>
+                                <div class="atras">
+                                    <p><h4>Notre carte! <br>cuisine traditionnelle de terroir composée principalement de produits frais de la région.<br>
+                                        Tous les dimanches midi, cuisses de grenouilles et gratin dauphinois</h4></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="bg-gray-1">
+
+            <section class="section section-lg section-inset-1 bg-gray-1 pt-lg-0">
+                <div class="container">
+                    <div class="row row-50 justify-content-xl-between align-items-lg-center">
+                        <div class="col-lg-6 wow fadeInLeft">
+                            <div class="box-image">
+                                <img class="box-image-static" src="../img/modif_%20-%202.jpeg" alt="" width="483"
+                                    height="327" />
+                                <img class="box-image-position-devant" src="../en/auberge_images/fait-maisontran.png"
+                                    alt="" />
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xl-5 wow fadeInRight">
+                            <h2>le mot du chef</h2>
+                            <div>Le chef <b class="letralogo2">Bruno Narici et son équipe </b>vous accueillent <br>dans son établissement, 
+                                du mardi au dimanche midi,<br> afin de vous faire découvrir sa cuisine traditionnelle de terroir<br> composée principalement de produits frais de la région. 
+                            </div>
+                                <div>La carte change au fil des saisons.<br>
+                                Le chef vous propose également tous les dimanches midi,<br> cuisses de grenouilles et gratin dauphinois,<br> <b>pensez à réserver.</b><br> 
+                                Nous vous souhaitons un agréable moment à l’Auberge Refleurie.
+                            </div><a name="menu"></a><img src="../en/auberge_images/signaturetrans.png" alt="" width="140"
+                                height="50" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- Featured Offers-->
+
+        <section class="section section-lg bg-gray-1">
+            <div class="container">
+                <h2 class="text-center">Notre carte Automnale</h2><br>
+                <h4 class="text-center text-warning "> Plat du jour à €16 </h4>
+                <h4 class="text-center"> <a href="https://www.facebook.com/laubergerefleurie"
+                        class="text-warning bg-dark" Target="_blank">( information des plats du jour <u>ICI</u> ) </a>
+                </h4>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="tabs-custom tabs-horizontal tabs-classic" id="tabs-1">
+                            <ul class="nav nav-tabs nav-tabs-classic">
+                                <li class="nav-item " role="presentation">
+                                    <a class="nav-link active show" href="#tabs-0-1" data-toggle="tab">Entrées</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link " href="#tabs-1-1" data-toggle="tab">Plats</a>
+                                </li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-2"
+                                        data-toggle="tab">Fromages & Planches</a>
+                                </li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-5"
+                                    data-toggle="tab">Desserts</a>
+                                </li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-3"
+                                        data-toggle="tab">Coupes de glaces</a>
+                                </li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-4"
+                                        data-toggle="tab">Menus</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="tabs-0-1">
+                                    <div class="box-event-modern">
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-0-1">Crumble salé</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 12</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    aux légumes de saison
+                                                </div>
+                                            </div>
+                                        </div><div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-0-1">Ravioles au bleu de Sassenage</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 15</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    éclats de noix
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-0-1">Gros chou</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 12</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    pâte salée garnie de poireaux et mousse de chèvre
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-0-1">Tartare de truite</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 13</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    pommes, pickles, oignon rouge, émincé d'olives noire, huile de noix
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-0-1">Gâteau de foie</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 9</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    Sauce écrevisse ou sauce tomate éclats de chataigne
+                                                </div>
+                                            </div>
+                                        </div><div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-0-1">Camembert rôti</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 10,50</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    Pain grillé
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade show " id="tabs-1-1">
+                                    <div class="box-event-modern">
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-1">Filet de bœuf</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end prix">
+                                                        <h6>€ 24</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    écrasé de patate douce à l'huile de truffe.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-1">Suprême de volaille</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 18.50</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    écrasé de pomme de terre, sauce morille.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-1">Filet de truite à la Grenobloise</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 20</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    Riz, câprons, oignons, croûtons.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-1">Pavé de sandre rôti</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 22,50</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    Risotto safrané.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-1">Côte de bœuf pour 2 personnes</a>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 60</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    environ 1,2kg, frites maison, salade. sauce: morille ou bleu ou poivre
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-1">Burger Végétarien</a>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 15</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    Galette de pomme de terre, salade, tomate, oignons, frites maison.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-1">Burger à la tomme de Montagne  (1 Viandes)</a>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 16,50</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-1">Burger à la tomme de Montagne (2 Viandes)</a>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 20</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    Buns maison, tomme de montagne, salade, tomates, oignons.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-1">Supplément sauces : morilles, bleu, poivre </a>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 2</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    buns maison, cheddar, salade, tomate, oignons.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade show " id="tabs-1-2">
+                                    <div class="box-event-modern">
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h2><a href="#tabs-1-2">Côté Fromages</a></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-2">Camembert rôti</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 10,50</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-2">Assiette 3 fromages</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 7</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-2">Faiselle de pays</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 6</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    crème ou coulis
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h2><a href="#tabs-1-2">Planches à partager</a></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-2">Planche de charcuterie</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 16</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-2">Planche de fromage</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 16</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-2">Planche mixte</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 17</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade show " id="tabs-1-5">
+                                    <div class="box-event-modern">
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-2">Parfait chartreuse</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 8.50</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    Mousse de glace meringuée
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-2">Snicker maison</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 7,50</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    Enrobage chocolat, mousse cacahuete, caramel praliné
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-2">Entremets chocolat</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 8</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    Feuilletine, mousse au chocolat enrobée de chocolat
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-2">Tarte aux pommes</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 6,50</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    boule de glace vanille.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-2">Tarte aux noix</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 6,50</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    Crème au caramel
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-2">Café gourmand</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 8,50</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade show " id="tabs-1-3">
+                                    <div class="box-event-modern">
+
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-3">Bueno</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 10</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    2 boules noisette, 1 boule vanille, éclats de Kinder.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-3">Pêche Melba</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 10</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    3 boules vanille, pêche, coulis de fruits rouges, chantilly.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-3">Colonel</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 12</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    3 boules citrons, vodka.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-3">Chartreusette</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 12</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    3 boules chartreuse, liqueur de chartreuse verte.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-3">Suplements l'unité</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 2,50</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    Vanille, chocolat, noisette, noix de coco, citron, Barbe à papa, fraise, framboise, rhum/raisin, caramel, menthe/chocolat.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center m-2 ">
+                                            <div class=" event-item-modern">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 col-md-9">
+                                                        <h4><a href="#tabs-1-3">Suplements 2 boules</a></h4>
+                                                    </div>
+                                                    <div class="col-3 col-md-3 me-0 text-end ">
+                                                        <h6>€ 4</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="event-item-modern-text">
+                                                    Vanille, chocolat, noisette, noix de coco, citron, Barbe à papa, fraise, framboise, rhum/raisin, caramel, menthe/chocolat.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade show " id="tabs-1-4">
+                                    <div class="pricing-table">
+                                        <h3 class="pricing-title">Menu enfant € 12</h3>
+
+                                        <!-- Lista de Caracteristicas / Propiedades -->
+                                        <ul class="table-list">
+                                            <li>
+                                                <p>Plat au choix </p>
+                                                <p>+ sirop </p>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    <hr>choisir le plat entre
+                                                </p>
+                                                <p>
+                                                <h5>Gnocchis poêlés, jambon</h5>
+                                                </p>
+                                                <p>
+                                                <h5>-- Ou --</h5>
+                                                </p>
+                                                <p>
+                                                <h5>Burger frites maison</h5>
+                                                </p>
+                                                <p>
+                                                <h5>-- Ou --</h5>
+                                                </p>
+                                                <p>
+                                                <h5>Steak frites maison</h5>
+                                                </p>
+                                                <p>
+                                                    <hr>desert entre
+                                                </p>
+                                                <p>
+                                                <h5>Chantilly chocolaté</h5>
+                                                </p>
+                                                <p>
+                                                <h5>-- Ou --</h5>
+                                                </p>
+                                                <p>
+                                                <h5>1 boules de glace</h5>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                        <!-- Contratar / Comprar -->
+                                        <div class="price">12 €</div>
+                                    </div>
+                                    <div class="pricing-table">
+                                        <h3 class="pricing-title">Menu gourmet a € 34</h3>
+                                        <!-- Lista de Caracteristicas / Propiedades -->
+                                        <ul class="table-list">
+                                            <li>
+                                                <p>Entrées au choix</p>
+                                                <h6>
+                                                    <p>Crumble salé</p>
+                                                    <p>-- Ou --</p>
+                                                    <p>Gâteau de foie</p>
+                                                </h6>
+                                                <hr>
+                                            </li>
+                                            <li>
+                                                <p>Plats au choix</p>
+                                                <h6>
+                                                    <p>
+                                                        filet de Truite à la Grenobloise</p>
+                                                    <p>-- Ou --</p>
+                                                    <p>Suprême de volaille
+                                                    </p>
+                                                    <p>-- Ou --</p>
+                                                    <p>Burger Végétarien
+                                                    </p>
+                                                    
+                                                <hr>
+                                            </li>
+                                            <li>
+                                                <p>Dessert au choix</p>
+                                                <h6>
+                                                    <p>
+                                                        Parfait chartreuse</p>
+                                                    <p>-- Ou --</p>
+                                                    <p>Tarte aux noix
+                                                    </p>
+                                                    <p>-- Ou --</p>
+                                                    <p>Tarte aux pommes
+                                                    </p>
+                                                    <p>-- Ou --</p>
+                                                    <p>2 boules de glace su choix  </p>
+                                            </li>
+                                        </ul>
+                                        <!-- Contratar / Comprar -->
+                                        <div class="price">34 €</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <section>
+                <div class="container">
+                    <div class="wow fadeInLeft py-2">
+                        <h3>Suivez le guide pour nous rejoindre!! </h3>
+                        <h4> 📞 +33 6 15 08 90 39 à Saint etienne de Crossey</h4>
+                    </div>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7447.388150694184!2d5.642250735766238!3d45.37828931638968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478ae4a117081993%3A0x7db477d06f16e68e!2sRestaurant%20L&#39;auberge%20refleurie!5e0!3m2!1sfr!2sar!4v1657912962476!5m2!1sfr!2sar"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div><a name="gallerie"></a>
+            </section>
+
+
+
+
+        </section>
+        <section class="section section-lg bg-gray-1">
+            <div class="row isotope-wrap">
+                <!-- Isotope Content-->
+                <div class="container">
+                    <div class="isotope" data-isotope-layout="fitRows" data-isotope-group="gallery"
+                        data-lightgallery="group" data-lg-thumbnail="false">
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow slideInDown">
+                                <div class="gallery-item-classic"><img
+                                        src="../img/5211d568-9ed2-4e66-ae7b-8698b00817da.jpg" alt="" />
+                                    <div class="gallery-item-classic-caption"><a
+                                            href="../img/5211d568-9ed2-4e66-ae7b-8698b00817da.jpg"
+                                            data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow slideInDown">
+                                <div class="gallery-item-classic"><img
+                                        src="../img/6e170a99-c997-4c0b-8188-4483e3ea8df7.jpg" alt="" />
+                                    <div class="gallery-item-classic-caption"><a
+                                            href="../img/6e170a99-c997-4c0b-8188-4483e3ea8df7.jpg"
+                                            data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow slideInDown">
+                                <div class="gallery-item-classic"><img src="../img/new1.jpeg" alt="" />
+                                    <div class="gallery-item-classic-caption"><a href="../img/new1.jpeg"
+                                            data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow slideInDown">
+                                <div class="gallery-item-classic"><img src="../img/new2.jpeg" alt="" />
+                                    <div class="gallery-item-classic-caption"><a href="../img/new2.jpeg"
+                                            data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow slideInDown">
+                                <div class="gallery-item-classic"><img src="../img/new3.jpeg" alt="" />
+                                    <div class="gallery-item-classic-caption"><a href="../img/new3.jpeg"
+                                            data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow slideInDown">
+                                <div class="gallery-item-classic"><img src="../img/new4.jpeg" alt="" />
+                                    <div class="gallery-item-classic-caption"><a href="../img/new4.jpeg"
+                                            data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow slideInDown">
+                                <div class="gallery-item-classic"><img src="../img/new5.jpeg" alt="" />
+                                    <div class="gallery-item-classic-caption"><a href="../img/new5.jpeg"
+                                            data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow slideInDown">
+                                <div class="gallery-item-classic"><img src="../img/new6.jpeg" alt="" />
+                                    <div class="gallery-item-classic-caption"><a href="../img/new6.jpeg"
+                                            data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow slideInDown">
+                                <div class="gallery-item-classic"><img src="../img/new7.jpeg" alt="" />
+                                    <div class="gallery-item-classic-caption"><a href="../img/new7.jpeg"
+                                            data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow slideInDown">
+                                <div class="gallery-item-classic"><img src="../img/new8.jpeg" alt="" />
+                                    <div class="gallery-item-classic-caption"><a href="../img/new8.jpeg"
+                                            data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow slideInDown">
+                                <div class="gallery-item-classic"><img src="../img/new11.jpeg" alt="" />
+                                    <div class="gallery-item-classic-caption"><a href="../img/new11.jpeg"
+                                            data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow slideInDown">
+                                <div class="gallery-item-classic"><img src="../img/new13.jpeg" alt="" />
+                                    <div class="gallery-item-classic-caption"><a href="../img/new13.jpeg"
+                                            data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow slideInDown">
+                                <div class="gallery-item-classic"><img src="../img/new14.jpeg" alt="" />
+                                    <div class="gallery-item-classic-caption"><a href="../img/new14.jpeg"
+                                            data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow slideInDown">
+                                <div class="gallery-item-classic"><img src="../img/new15.jpeg" alt="" />
+                                    <div class="gallery-item-classic-caption"><a href="../img/new15.jpeg"
+                                            data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow slideInDown">
+                                <div class="gallery-item-classic"><img src="../img/ar-bar.jpeg" alt="" />
+                                    <div class="gallery-item-classic-caption">
+                                        <a href="../img/ar-bar.jpeg" data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow slideInDown">
+                                <div class="gallery-item-classic"><img
+                                        src="../img/1828e1df-ece7-487e-a48c-42ab974bf813.jpg" alt="" />
+                                    <div class="gallery-item-classic-caption">
+                                        <a href="../img/1828e1df-ece7-487e-a48c-42ab974bf813.jpg"
+                                            data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow slideInDown">
+                                <div class="gallery-item-classic"><img src="../img/ar-tableterrasse.jpeg" alt="" />
+                                    <div class="gallery-item-classic-caption">
+                                        <a href="../img/ar-tableterrasse.jpeg" data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow fadeInUp">
+                                <div class="gallery-item-classic"><img src="../img/ar-entreroue.jpeg" alt="" />
+                                    <div class="gallery-item-classic-caption"><a href="../img/ar-entreroue.jpeg"
+                                            data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow fadeInUp">
+                                <div class="gallery-item-classic">
+                                    <img src="../img/a6f5c0ab-37c9-4949-bb32-86d3865fdbd8.jpg" alt="" />
+                                    <div class="gallery-item-classic-caption">
+                                        <a href="../img/a6f5c0ab-37c9-4949-bb32-86d3865fdbd8.jpg"
+                                            data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow fadeInUp">
+                                <div class="gallery-item-classic"><img src="../img/ar-voletfleurs.jpeg" alt="" />
+                                    <div class="gallery-item-classic-caption">
+                                        <a href="../img/ar-voletfleurs.jpeg" data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow fadeInUp">
+                                <div class="gallery-item-classic"><img
+                                        src="../img/c0c15dc9-c32c-4fb1-8190-4098a04ec10f.jpg" alt="" />
+                                    <div class="gallery-item-classic-caption">
+                                        <a href="../img/c0c15dc9-c32c-4fb1-8190-4098a04ec10f.jpg"
+                                            data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow fadeInUp">
+                                <div class="gallery-item-classic"><img src="../img/ar-terrasse.jpeg" alt="" />
+                                    <div class="gallery-item-classic-caption">
+                                        <a href="../img/ar-terrasse.jpeg" data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow fadeInUp">
+                                <div class="gallery-item-classic">
+                                    <img src="../img/9bea307d-1159-40cc-af71-acce135036ca.jpg" alt="" />
+                                    <div class="gallery-item-classic-caption">
+                                        <a href="../img/9bea307d-1159-40cc-af71-acce135036ca.jpg"
+                                            data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow fadeInUp">
+                                <div class="gallery-item-classic">
+                                    <img src="../img/353ff8cb-1b1e-4334-9cca-47d64c05962c.jpg" alt="" />
+                                    <div class="gallery-item-classic-caption">
+                                        <a href="../img/353ff8cb-1b1e-4334-9cca-47d64c05962c.jpg"
+                                            data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow fadeInUp">
+                                <div class="gallery-item-classic"><img src="../img/ar-tablejarre.jpeg" alt="" />
+                                    <div class="gallery-item-classic-caption">
+                                        <a href="../img/ar-tablejarre.jpeg" data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow fadeInUp">
+                                <div class="gallery-item-classic"><img src="../img/ar-volets.jpeg" alt="" />
+                                    <div class="gallery-item-classic-caption">
+                                        <a href="../img/ar-volets.jpeg" data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow fadeInUp">
+                                <div class="gallery-item-classic"><img src="../img/ar-couvert.jpeg" alt="" />
+                                    <div class="gallery-item-classic-caption">
+                                        <a href="../img/ar-couvert.jpeg" data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 sotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow fadeInUp">
+                                <div class="gallery-item-classic"><img src="../img/ar-entrebarloin3.jpeg" alt="" />
+                                    <div class="gallery-item-classic-caption">
+                                        <a href="../img/ar-entrebarloin3.jpeg" data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-2 isotope-item wow-outer" data-filter="Category 3">
+                            <div class="wow fadeInUp">
+                                <div class="gallery-item-classic"><img src="../img/ar-barcopero.jpeg" alt="" />
+                                    <div class="gallery-item-classic-caption">
+                                        <a href="../img/ar-barcopero.jpeg" data-lightgallery="item">zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Page Footer-->
+        <footer class="section footer-minimal context-dark">
+            <div class="container wow-outer">
+                <div class="wow fadeIn mb-1">
+                    <div class="row row-2 ">
+                        <div class="col-12"><a href="index.html"><img src="../en/auberge_images/logo-auberge528×294.jpg"
+                                    alt="" width="140" height="57" /></a>
+                        </div>
+
+                        <div class="col-12 letralogo">
+                            <ul class="social-list">
+                                <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-facebook"
+                                        href="https://www.facebook.com/laubergerefleurie"></a></li>
+                                <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-instagram"
+                                        href="https://www.instagram.com/laubergerefleurie/"></a></li>
+                                <!-- <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-twitter" href="#"></a></li>
+                            <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-youtube-play" href="#"></a></li>
+                            <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-pinterest-p" href="#"></a></li>-->
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="rights "><span>&copy;&nbsp; </span><span
+                            class="copyright-year"></span><span>&nbsp;</span><span class="letralogo">L'auberge
+                            Refleurie</span><span>.&nbsp;</span><span>All Rights Reserved.</span><span>&nbsp;</span><a
+                            href="#">Privacy Policy</a>. Design&nbsp;by&nbsp;<a href="">Thierry Meunier</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="../js/core.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+        function cambiar() {
+            const logo = document.querySelector('#logo');
+            logo.dataset.parallaxImg = "../img/modif_1.jpeg";
+
+        }
+        function volver() {
+            const logo = document.querySelector('#logo');
+            logo.dataset.parallaxImg = "../img/Entree_principL.jpeg";
+
+        }
+    </script>
+</body>
+
+</html>

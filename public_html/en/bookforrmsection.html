@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<section class="section-transform-top">
+  <div class="container">
+    <div class="box-booking">
+      <form class="rd-form rd-mailform booking-form">
+        <div>
+          <p class="booking-title">Name</p>
+          <div class="form-wrap">
+            <input class="form-input" id="booking-name" type="text" name="name"
+                   data-constraints="@Required">
+            <label class="form-label" for="booking-name">Your name</label>
+          </div>
+        </div>
+        <div>
+          <p class="booking-title">Phone</p>
+          <div class="form-wrap">
+            <input class="form-input" id="booking-phone" type="text" name="phone"
+                   data-constraints="@Numeric">
+            <label class="form-label" for="booking-phone">Your phone number</label>
+          </div>
+        </div>
+        <div>
+          <p class="booking-title">Date</p>
+          <div class="form-wrap form-wrap-icon"><span class="icon mdi mdi-calendar-text"></span>
+            <input class="form-input" id="booking-date" type="text" name="date"
+                   data-constraints="@Required" data-time-picker="date">
+          </div>
+        </div>
+        <div>
+          <p class="booking-title">no. of people</p>
+          <div class="form-wrap">
+            <select data-placeholder="2">
+              <option label="placeholder"></option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <button class="button button-lg button-gray-600" type="submit">Check availability</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>
